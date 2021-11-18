@@ -1,7 +1,6 @@
 " Basic
 
 syntax on
-set encoding=utf-8
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -16,7 +15,7 @@ set autoindent
 
 " Plugs
 
-call plug#begin('~/local/share/nvim/plugged')
+call plug#begin('/home/tiko/.config/nvim/plugged/')
 
 Plug 'neoclide/coc.nvim'
 Plug 'tpope/vim-surround'
@@ -44,12 +43,18 @@ call plug#end()
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
-
+let NERDTreeShowHidden=1
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd w
 nnoremap <C-f> :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
 nmap <F8> :TagbarToggle<CR>
-:set completeopt-=preview 
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
+:set completeopt-=preview
 
 source $HOME/.config/nvim/themes/onedark.vim

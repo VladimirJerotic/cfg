@@ -1,5 +1,3 @@
-pfetch
-
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -17,17 +15,19 @@ plugins=(git zsh-autosuggestions fzf web-search copydir copyfile dirhistory)
 
 source $ZSH/oh-my-zsh.sh
 
+alias hard="cd ~/media/tiko/hard/Hard Disk/"
+alias desk="cd ~/Desktop"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cliflare="p10k configure"
 alias cl="clear"
 alias mp3="yt-dlp -f 'ba' -x --audio-format mp3"
-alias video="ytd-dlp"
+alias video="yt-dlp"
 alias nf="neofetch"
 alias ca="clear"
 alias uuup="sudo apt update"
 alias uppp="sudo apt upgrade"
-alias pihole="ssh pi@192.168.1.33"
+alias pihole="ssh pi@192.168.1.9"
 alias convert="ffmpeg -i not_wav_song.webm -f wav -bitexact -acodec pcm_s16le -ar 22050 -ac 1 song.wav" 
 alias sve="lsd -a"
 alias vr="clear && curl wttr.in/Belgrade"
@@ -36,5 +36,6 @@ alias gasi="sudo poweroff"
 alias rr="ranger"
 alias rrr="sudo ranger"
 alias logout="sudo pkill -u tiko"
-
+alias nv='nvim'
+alias snv='sudo nvim'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
